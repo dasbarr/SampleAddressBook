@@ -1,0 +1,46 @@
+﻿<Window x:Class="SampleAddressBook.EntryEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SampleAddressBook"
+        mc:Ignorable="d"
+        Height="171" Width="300" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid Margin="0,0,5,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- Input fields -->
+        <Label Grid.Column="0" Grid.Row="0">First name:</Label>
+        <TextBox Name="FirstNameEdit" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" Text="{Binding FirstName}"></TextBox>
+
+        <Label Grid.Column="0" Grid.Row="1">Last name:</Label>
+        <TextBox Name="LastNameEdit" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" Text="{Binding LastName}"></TextBox>
+
+        <Label Grid.Column="0" Grid.Row="2">Phone:</Label>
+        <TextBox Name="PhoneNumberEdit" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" Text="{Binding PhoneNumber}"></TextBox>
+
+        <Label Grid.Column="0" Grid.Row="3">Email:</Label>
+        <TextBox Name="EmailEdit" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" Text="{Binding Email}"></TextBox>
+
+        <!-- Buttons -->
+        <StackPanel HorizontalAlignment="Right" Margin="5,5,0,5" Grid.Column="1" Grid.Row="4" Orientation="Horizontal">
+            <StackPanel.Resources>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Margin" Value="5,0,0,0"/>
+                </Style>
+            </StackPanel.Resources>
+            <Button x:Name="ApplyButton" Width="40" Height="20" Background="#FFB0E6B0" Click="OnApplyButtonClick">Apply</Button>
+            <Button x:Name="CancelButton" Width="40" Height="20" Background="#FFB0E6B0" Click="OnCancelButtonClick">Cancel</Button>
+        </StackPanel>
+    </Grid>
+</Window>
